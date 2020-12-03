@@ -3,9 +3,10 @@ let s:Prelude = s:V.import('Prelude')
 
 " global scope
 " g: これもグローバルスコープ、これは変数につく
-function! ghlink#build_url()
-  let anchor = "L10-L16"
-  let url = "https://github.com/".s:extract_github_organization()."/blob/".s:current_git_hash()."/".s:current_git_path("/Users/taba.noritomo/ghq/github.com/cat2koban/dotfiles/README.md")."#".anchor
+function! ghlink#build_url(line1, line2)
+  let anchor = "L".a:line1."-L".a:line2
+  let path = expand('%:p')
+  let url = "https://github.com/".s:extract_github_organization()."/blob/".s:current_git_hash()."/".s:current_git_path(path)."#".anchor
   let @* = url
 endfunction
 
