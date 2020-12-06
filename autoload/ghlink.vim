@@ -1,8 +1,6 @@
 let s:V = vital#ghlink#new()
 let s:Prelude = s:V.import('Prelude')
 
-" global scope
-" g: これもグローバルスコープ、これは変数につく
 function! ghlink#build_url(line1, line2)
   let anchor = "L".a:line1."-L".a:line2
   let path = expand('%:p')
@@ -10,7 +8,6 @@ function! ghlink#build_url(line1, line2)
   let @* = url
 endfunction
 
-" s: スコープがこのファイルonly
 function! s:current_git_hash()
   let current_git_hash = system("git rev-parse HEAD")
   return substitute(l:current_git_hash, "\n", "", "g")
