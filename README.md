@@ -1,4 +1,5 @@
 # ghlink.vim
+[![Powered by vital.vim](https://img.shields.io/badge/powered%20by-vital.vim-80273f.svg)](https://github.com/vim-jp/vital.vim)
 
 ghlink.vim is a Vim plugin for get the GitHub link for the selected line.
 ![DEMO]( assets/ghlink_demo.gif )
